@@ -17,8 +17,8 @@ services:
       retries: 5
 
   backend:
-    image: mybackend
-    container_name: mybackend
+    image: mthsmnds/bingo-driven-backend
+    container_name: bing-backend
     build: back-end/
     ports:
       - 5000:5000
@@ -29,9 +29,9 @@ services:
     depends_on:
       postgres:
         condition: service_healthy
-  
+
   frontend:
-    image: myfrontend
+    image: mthsmnds/bingo-driven-frontend
     build: front-end/
     ports:
       - 8080:80
